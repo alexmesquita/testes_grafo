@@ -1,3 +1,6 @@
+// matriz nxn, as colunas e as linhas representam vertices
+// se Aij = 1, significa q existe uma aresta entre os vertices i e j
+
 #include <iostream>
 #include <vector>
 #define HEIGHT 4

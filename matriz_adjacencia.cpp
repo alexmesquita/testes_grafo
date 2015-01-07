@@ -34,6 +34,7 @@ int main() {
 	for (int i = 0; i < HEIGHT; ++i)
 		grafo[i].resize(WIDTH);
 
+	// grafo completo, sem arestas circulares
 	for (int i = 0; i < HEIGHT; ++i)
 	{
 		for(int j = 0; j < WIDTH; j++)

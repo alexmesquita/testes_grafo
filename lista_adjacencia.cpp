@@ -1,0 +1,1 @@
+//vetor de vertices (onde em cada vertice tem um lista com os vertices ligados)

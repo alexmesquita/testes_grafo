@@ -5,17 +5,19 @@
 
 #include <iostream>
 #include <vector>
-#include <queue>
-#define VERtICES 4
+#include <list>
+#define VERTICES 4
 
 using namespace std;
 
-void print_grafo(std::vector< queue<int> > grafo){
-	for (int i = 0; i < VERtICES; ++i)
+void print_grafo(std::vector< list<int> > grafo){
+	for (int i = 0; i < VERTICES; ++i)
 	{
 		cout << "[" << i << "] -> ";
 		bool j = false;
-		while(!grafo[i].empty())
+
+		auto end = grafo[i].end();
+		for(auto it = grafo[i].begin(); it != end; ++it)
 		{
 			if(j){
 				cout << ", "; 
@@ -25,35 +27,34 @@ void print_grafo(std::vector< queue<int> > grafo){
 				j=true;
 			}
 
-			cout << grafo[i].front();
-			grafo[i].pop();
+			cout << *it;
 		}
 		cout << "]" << endl;
 	}
 }
 
 int main() {
-	vector< queue<int> > grafo;
+	vector< list<int> > grafo;
 
-	// Set up size. (VERtICES)
-	grafo.resize(VERtICES);
+	// Set up size. (VERTICES)
+	grafo.resize(VERTICES);
 
 
 	// 0<->2
 	// 0<->3
 	// 1<->3
 	// 2<->3
-	grafo[0].push(2);
-	grafo[0].push(3);
+	grafo[0].push_back(2);
+	grafo[0].push_back(3);
 
-	grafo[1].push(3);
+	grafo[1].push_back(3);
 
-	grafo[2].push(0);
-	grafo[2].push(3);
+	grafo[2].push_back(0);
+	grafo[2].push_back(3);
 
-	grafo[3].push(0);
-	grafo[3].push(1);
-	grafo[3].push(2);
+	grafo[3].push_back(0);
+	grafo[3].push_back(1);
+	grafo[3].push_back(2);
 
 
 

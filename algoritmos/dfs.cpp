@@ -1,7 +1,4 @@
-//vetor de vertices (onde em cada vertice tem um lista com os vertices ligados)
-
-// as colunas representam as arestas e as linhas representam os vertices 
-// se a aresta ta ligada ao vertice, marca como true
+// Busca em profundidade
 
 #include <iostream>
 #include <vector>
@@ -50,6 +47,8 @@ double dfs_visit(vector<No> *grafo, int posicao, int *tempo){
 	*tempo = *tempo + 1;
 	(*grafo)[posicao].cor = cinza;
 	(*grafo)[posicao].tempo_descoberto = *tempo;
+	//se for o procurado tem q fazer a condição aqui
+	// pois quando o vertice é marcado de cinza ele já é conhecido
 	auto end = (*grafo)[posicao].vizinhos.end();
 
 	for(auto it = (*grafo)[posicao].vizinhos.begin(); it != end; ++it){
